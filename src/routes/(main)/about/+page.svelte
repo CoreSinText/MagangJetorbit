@@ -1,5 +1,18 @@
 <script>
+	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+
 	const logo1 = '/jetorbit-astro-peace-logo.png';
+
+	onMount(() => {
+		const location = window.location.href;
+
+		if (location != `${location}/login`) {
+			if (localStorage.getItem('isLogin') != 'true') {
+				goto('/login');
+			}
+		}
+	});
 </script>
 
 <svelte:head>

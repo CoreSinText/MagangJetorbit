@@ -18,8 +18,8 @@
 
 		if (response.status === 200) {
 			goto('/');
+			localStorage.setItem('isLogin', 'true');
 		}
-		console.log(response);
 	};
 </script>
 
